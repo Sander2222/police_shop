@@ -7,4 +7,5 @@ CREATE TABLE if NOT EXISTS police_shop (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 insert into police_shop (id, name, display, type, price) Values
-(1, 'bulletproof', 'bulletproof', 'item', 500)
+(1, 'bulletproof', 'bulletproof', 'item', 500),
+(2, 'medikit', 'Medizinkasten', 'item', 500);
