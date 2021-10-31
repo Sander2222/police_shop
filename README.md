@@ -6,5 +6,5 @@
 - You can add items to the shop per SQL Statement, an example is in the sql file
 - You can change the coords in the client.lua by row 36
 
-Preview:
+
 ![lspd shop](https://user-images.githubusercontent.com/86840128/139601807-b0604035-c1a1-47a7-8d51-715a1080ce50.png)
