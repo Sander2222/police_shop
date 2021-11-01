@@ -13,7 +13,7 @@ ESX.RegisterServerCallback('police_shop:canAfford', function(source, cb, value, 
         for key, value in pairs(warenkorb) do
             local sourceItem = x.getInventoryItem(value.name)
         	    if sourceItem.weight ~= -1 and sourceItem.count >= 30 then
-					x.showNotification("Du kannst nicht mehr von " .. value.display .. " mit dir tragen!")
+					x.showNotification("You can no longer carry " .. value.display .. "")
             	else
 					cb(true)
                 	x.addInventoryItem(value.name, 1)
