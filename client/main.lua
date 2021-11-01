@@ -82,9 +82,9 @@ RegisterNUICallback('buy', function(data, cb)
     
     ESX.TriggerServerCallback('police_shop:canAfford', function(bool)
         if bool then
-            ESX.ShowNotification(("Du hast einen Einkauf für $%s getätigt"):format(itemPrice))
+            ESX.ShowNotification(("You bought somethink for $%s"):format(itemPrice))
         else
-            ESX.ShowNotification(("Du kannst dir den Einkauf für $%s nicht leisten!"):format(itemPrice))
+            ESX.ShowNotification(("You can't afford it"):format(itemPrice))
         end
     end, itemPrice, warenkorb)
 
@@ -119,7 +119,7 @@ Citizen.CreateThread(function()
             local dist = GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), vector3(value.x, value.y, value.z))
 
             if dist <= 2.0 and xPlayer.job.name == 'police' then
-                ESX.ShowHelpNotification("Drücke ~INPUT_CONTEXT~ um auf den LSPD-Shop zuzugreifen")
+                ESX.ShowHelpNotification("Press ~INPUT_CONTEXT~ to open the LSPD-Shop")
 
                 if IsControlJustReleased(0, 38) then
                     toggleField(true)
