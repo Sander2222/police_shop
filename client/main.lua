@@ -33,7 +33,7 @@ Citizen.CreateThread(function()
     end)
 end)
 
-local laden = {
+local shop = {
 
     {x= 25.384355545044,y= -1355.2346191406,z= 29.341281890869}
 }
@@ -47,11 +47,11 @@ function toggleField(enable)
     if enable then
         SendNUIMessage({
             action = 'open'
-        }) 
+        })
     else
         SendNUIMessage({
             action = 'close'
-        }) 
+        })
     end
 end
 
@@ -79,7 +79,7 @@ RegisterNUICallback('buy', function(data, cb)
     end
 
     local itemPrice = totalprice
-    
+
     ESX.TriggerServerCallback('police_shop:canAfford', function(bool)
         if bool then
             ESX.ShowNotification(("You bought somethink for $%s"):format(itemPrice))
@@ -103,7 +103,7 @@ end
 Citizen.CreateThread(function()
     while true do
         Wait(0)
-        for key, value in pairs(laden) do
+        for key, value in pairs(shop) do
             DrawMarker(20, vector3(value.x, value.y, value.z + 1), 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.0, 1.0, 1.0, 255, 0, 0, 100, false, true, 2, true, false, false, false)
         end
     end
@@ -115,7 +115,7 @@ Citizen.CreateThread(function()
 
         local xPlayer = ESX.GetPlayerData()
 
-        for key, value in pairs(laden) do
+        for key, value in pairs(shop) do
             local dist = GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), vector3(value.x, value.y, value.z))
 
             if dist <= 2.0 and xPlayer.job.name == 'police' then
