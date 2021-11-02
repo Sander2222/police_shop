@@ -128,19 +128,3 @@ Citizen.CreateThread(function()
         end
     end
 end)
-
-Citizen.CreateThread(function()
-    for _, coords in pairs(laden) do
-        local blip = AddBlipForCoord(vector3(coords.x, coords.y, coords.z))
-
-        SetBlipSprite(blip, 52)
-        SetBlipScale(blip, 0.9)
-        SetBlipColour(blip, 52)
-        SetBlipDisplay(blip, 4)
-        SetBlipAsShortRange(blip, true)
-
-        BeginTextCommandSetBlipName("STRING")
-        AddTextComponentString("24/7 Store")
-        EndTextCommandSetBlipName(blip)
-        end
-end)
