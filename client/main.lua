@@ -113,10 +113,9 @@ Citizen.CreateThread(function()
     while true do
         Wait(0)
 
-        local xPlayer = ESX.GetPlayerData()
-
         for key, value in pairs(shop) do
             local dist = GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), vector3(value.x, value.y, value.z))
+            local xPlayer = ESX.GetPlayerData()
 
             if dist <= 2.0 and xPlayer.job.name == 'police' then
                 ESX.ShowHelpNotification("Press ~INPUT_CONTEXT~ to open the LSPD-Shop")
