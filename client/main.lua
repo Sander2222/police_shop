@@ -122,6 +122,8 @@ Citizen.CreateThread(function()
 
                 if IsControlJustReleased(0, 38) then
                     toggleField(true)
+                else
+                    TriggerEvent('esx:showAdvancedNotification', 'LSPD', 'Shop-System', 'Es ist kein Fahrzeug in der nähe.', 'CHAR_CALL911', 1)
                 end
             end
         end
