@@ -6,6 +6,7 @@
 - You can add items to the shop per SQL Statement, an example is in the sql file
 - You can change the coords in the client.lua by row 36
 - You can add item icons as png in police_shop/html/items
+- the icons must have the name from the SQL
 
 
 
