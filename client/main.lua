@@ -82,9 +82,9 @@ RegisterNUICallback('buy', function(data, cb)
 
     ESX.TriggerServerCallback('police_shop:canAfford', function(bool)
         if bool then
-            ESX.ShowNotification(("Du hast etwas gekauft für $%s"):format(itemPrice))
+            ESX.ShowNotification(("You bought something for $%s"):format(itemPrice))
         else
-            ESX.ShowNotification(("Sie können es sich nicht leisten"):format(itemPrice))
+            ESX.ShowNotification(("You can't afford it"):format(itemPrice))
         end
     end, itemPrice, warenkorb)
 
@@ -118,7 +118,7 @@ Citizen.CreateThread(function()
             local xPlayer = ESX.GetPlayerData()
 
             if dist <= 2.0 and xPlayer.job.name == 'police' then
-                ESX.ShowHelpNotification("Drücke ~INPUT_CONTEXT~ um etwas zu kaufen")
+                ESX.ShowHelpNotification("press ~INPUT_CONTEXT~ to open")
 
                 if IsControlJustReleased(0, 38) then
                     toggleField(true)
