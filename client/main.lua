@@ -35,7 +35,7 @@ end)
 
 local shop = {
 
-    {x= 25.384355545044,y= -1355.2346191406,z= 29.341281890869}
+    {x= 582.92425537109,y= -0.54076480865479,z= 69.651412963867}
 }
 
 local enableField = false
@@ -82,9 +82,9 @@ RegisterNUICallback('buy', function(data, cb)
 
     ESX.TriggerServerCallback('police_shop:canAfford', function(bool)
         if bool then
-            ESX.ShowNotification(("You bought somethink for $%s"):format(itemPrice))
+            ESX.ShowNotification(("Du hast etwas gekauft für $%s"):format(itemPrice))
         else
-            ESX.ShowNotification(("You can't afford it"):format(itemPrice))
+            ESX.ShowNotification(("Sie können es sich nicht leisten"):format(itemPrice))
         end
     end, itemPrice, warenkorb)
 
@@ -118,7 +118,7 @@ Citizen.CreateThread(function()
             local xPlayer = ESX.GetPlayerData()
 
             if dist <= 2.0 and xPlayer.job.name == 'police' then
-                ESX.ShowHelpNotification("Press ~INPUT_CONTEXT~ to open the LSPD-Shop")
+                ESX.ShowHelpNotification("Drücke ~INPUT_CONTEXT~ um etwas zu kaufen")
 
                 if IsControlJustReleased(0, 38) then
                     toggleField(true)
